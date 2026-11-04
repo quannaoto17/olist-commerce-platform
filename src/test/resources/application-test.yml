@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+
+app:
+  llm:
+    api-url: http://localhost:9999/mock-llm
+    api-key: test-api-key
+    model: llama-3.3-70b-versatile

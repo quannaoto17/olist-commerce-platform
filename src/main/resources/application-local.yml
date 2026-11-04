@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5432}/${POSTGRES_DB:sla_attribution_db}
+    username: ${POSTGRES_USER:sla_admin}
+    password: ${POSTGRES_PASSWORD:sla_secret_password}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
