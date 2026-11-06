@@ -30,3 +30,6 @@ target/
 # Raw Olist dataset (keep sample data tracked for CI)
 data/raw/*.csv
 !data/raw/.gitkeep
+
+frontend/dist/
+frontend/node_modules/

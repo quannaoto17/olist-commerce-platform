@@ -7,7 +7,7 @@
    * **Tầng 1 (`tier1_metrics` + `Flyway SQL`):** Đo lường số liệu chuẩn xác trên PostgreSQL (tính độ trễ giao hàng thực tế so với cam kết SLA và độ trễ chuẩn bị hàng của Seller).
    * **Tầng 2 (`tier2_ai` + `RestClient`):** Gọi trực tiếp **API LLM bên ngoài** (Groq API / Gemini / OpenRouter / OpenAI) thông qua [`LlmClientConfig`](file:///home/naoto/sla-attribution-engine/src/main/java/com/ecommerce/sla/tier2_ai/config/LlmClientConfig.java) và [`ReviewAiExtractorService`](file:///home/naoto/sla-attribution-engine/src/main/java/com/ecommerce/sla/tier2_ai/service/ReviewAiExtractorService.java) để bóc tách bình luận $\le 2$ sao ra JSON Schema chuẩn.
    * **Tầng 3 (`tier3_arbitration`):** Trọng tài đối soát tự động ghép nối số liệu SQL (Tầng 1) và ngữ nghĩa AI (Tầng 2) để quy trách nhiệm (`CARRIER_3PL_FAULT`, `SELLER_MERCHANT_FAULT`, `CUSTOMER_SUBJECTIVE_BIAS`).
-3. **Database (`PostgreSQL 16`):** Chạy qua Docker nhẹ nhàng ở máy cá nhân hoặc dùng Neon.tech / Supabase trên Cloud.
+3. **Database (`PostgreSQL 16`):** Chạy qua Docker nhẹ nhàng ở máy cá nhân hoặc dùng Supabase trên Cloud.
 
 ## 2. Hướng dẫn chạy nhanh
 ```bash
