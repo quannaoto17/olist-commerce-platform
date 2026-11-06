@@ -1,0 +1,4 @@
+# Automatic HTTPS via Let's Encrypt. Replace with your own domain if you have one.
+20-243-128-53.sslip.io {
+    reverse_proxy api:8080
+}
